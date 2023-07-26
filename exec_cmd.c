@@ -7,7 +7,6 @@ void exec_cmd(char **filepath){
        id = fork();
        if(id == 0){
         if(execve(filepath[0], filepath, environ) == -1){
-                     
                      perror("ERROR");
                      exit(1);
         }
