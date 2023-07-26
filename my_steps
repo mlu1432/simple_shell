@@ -1,0 +1,20 @@
+program starts
+    (1)-display prompt
+
+    (2)-get user input(one word required)
+        -if user input is EOF got to step 5;
+        -convert user input to an array of arguments;
+
+
+    (3)-check if file is exists
+        if file exists
+            return the path
+
+            
+        if file executable
+            got to step 4;
+
+    (4)-execute command;
+
+
+    (5)exit shell

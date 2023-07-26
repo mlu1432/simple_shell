@@ -1,0 +1,16 @@
+/**
+1. Check if the shell is in interactive mode or not and set the appropriate prompt
+2. Show the prompt
+3. Get input command line
+4. Check if the command line is empty or EOF
+5. If empty, goto 2. If EOF, free any allocated memory and exit the shell.
+6. Split the command line into tokens.
+7. Check if the command is a builtin command.
+8. If builtin, execute the appropriate function. Set the errno to reflect the command exit code.
+9. If not builtin, find the command in the path.
+   - Check if the command is a path and verify if the executable exist. If yes, execute it. Else, set the appropraite error no.
+   - If not a path, try to find the executable from the PATH environment variable. If found, execute the command, else set the appropriate error no.
+10. Check if the executed command exit with an error and show the appropriate error.
+11. Free any allocated memory during the command execution.
+12. Goto 2.
+*/
