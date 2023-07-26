@@ -20,7 +20,7 @@ int display_prompt(void)
 
 while (1)
 {
-printf("shell: " );
+printline("shell: ");
 getline_result = getline(&buffer, &buff_count, stdin);
 argu = con_args(buffer, " \n");
 
