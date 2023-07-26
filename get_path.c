@@ -28,6 +28,7 @@ char *get_path(char *filename)
         }
         free(real_path);
     }
+    free(each_path);
 
 return filename;
 }
