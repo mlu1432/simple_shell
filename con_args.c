@@ -35,6 +35,7 @@ strcpy(tokens[i], token);
 token = strtok(NULL, delim);
 }
 tokens[i] = NULL;
+free(token);
 return (tokens);
 }
 

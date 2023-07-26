@@ -46,6 +46,8 @@ exec_cmd(argu);
 }
 }
 free(path);
+free_pointer(argu);
 free(buffer);
+
 return (0);
 }
