@@ -6,9 +6,11 @@ void exec_cmd(char **filepath){
         status = 0;
        id = fork();
        if(id == 0){
-        if(execve(filepath[0], filepath, NULL) == -1)
+        if(execve(filepath[0], filepath, NULL) == -1){
+
                      perror("ERROR");
                      exit(1);
+        }
        }else{
               wait(&status);
        }
