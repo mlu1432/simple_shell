@@ -15,9 +15,6 @@ int display_prompt(void)
 
     pid = getpid();
 
-
-//printline("shell()$: ");
-
 while (1)
 {
 printline("shell: ");
