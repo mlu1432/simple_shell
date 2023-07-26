@@ -43,14 +43,13 @@ if(input == EOF || input == -1){
     exec_cmd(argu);
 
 }
-
-free(buffer);
 }
 
 
 
 }
 free_pointers_array(argu);
+free(path);
 free(buffer);
 
 

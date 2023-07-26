@@ -30,8 +30,6 @@ strcat(real_path, "/");
 strcat(real_path, filename);
 if (file_exist(real_path))
 return (real_path);
-
-free(real_path);
 }
 
 return (filename);
