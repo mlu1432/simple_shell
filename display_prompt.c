@@ -7,18 +7,14 @@ int display_prompt(void)
     char *path;
     char *buffer;
     char **argu;
-    int getline_result;
-    int pid;
     buff_count = 0;
     buffer = malloc(sizeof(char) * buff_count);
     buffer = NULL;
 
-    pid = getpid();
-
 while (1)
 {
 printline("shell: ");
-getline_result = getline(&buffer, &buff_count, stdin);
+getline(&buffer, &buff_count, stdin);
 argu = con_args(buffer, " \n");
 
 if(file_exist(argu[0])){
