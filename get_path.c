@@ -23,7 +23,7 @@ file_length = strlen(filename);
 for (i = 0; each_path[i] != NULL; i++)
 {
 path_length = strlen(each_path[i]);
-length = path_length + file_length + 2;
+length = path_length + file_length;
 real_path = malloc(sizeof(char *) * length);
 real_path = strdup(each_path[i]);
 strcat(real_path, "/");
@@ -31,6 +31,6 @@ strcat(real_path, filename);
 if (file_exist(real_path))
 return (real_path);
 }
-
+free(real_path);
 return (filename);
 }

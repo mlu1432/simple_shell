@@ -17,7 +17,6 @@ int display_prompt(void)
     char *buffer;
     char **argu;
     buff_count = 0;
-    buffer = malloc(sizeof(char) * buff_count);
     buffer = NULL;
     input = 0;
 
