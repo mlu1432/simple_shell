@@ -44,7 +44,7 @@ if(input == EOF || input == -1){
 
 }
 
-
+free(buffer);
 }
 
 

@@ -8,10 +8,8 @@
 
 void printline(char *string)
 {
-
 for (; *string != '\0'; string++)
 {
 _putchar(*string);
 }
-
 }

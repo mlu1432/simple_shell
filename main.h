@@ -20,9 +20,4 @@ char *get_path(char *filename);
 void exec_cmd(char **filepath);
 char **con_args(char *string, char *delim);
 
-
-
-
-
-
 #endif

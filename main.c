@@ -9,7 +9,7 @@
 
 int main()
 {
-  display_prompt();
+display_prompt();
 return (0);
 }
 
