@@ -1,6 +1,14 @@
 
 #include "main.h"
 
+void free_pointers_array(char **arr) {
+  int i = 0;
+
+  while (arr[i])
+    free(arr[i++]);
+  free(arr);
+}
+
 int display_prompt(void)
 {
     size_t buff_count;
@@ -15,7 +23,8 @@ int display_prompt(void)
 
 while (-1)
 {
-printline("shell: ");
+if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
+                            printline("shell: ");
 input = getline(&buffer, &buff_count, stdin);
 if(input == EOF || input == -1){
     printline("\n");
@@ -41,7 +50,7 @@ if(input == EOF || input == -1){
 
 
 }
-
+free_pointers_array(argu);
 free(buffer);
 
 

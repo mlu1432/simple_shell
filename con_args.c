@@ -31,6 +31,7 @@ char **con_args(char *line, char *delim)
     {
             tokens[i] = malloc(sizeof(char) * strlen(token));
             strcpy(tokens[i], token);
+            
             token = strtok(NULL, delim);
     }
     tokens[i] = NULL;
