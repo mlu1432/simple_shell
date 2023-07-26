@@ -19,6 +19,7 @@ printline("shell: ");
 if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
 input = getline(&buffer, &buff_count, stdin);
 if(input == EOF || input == -1){
+    printline("\n");
     return -1;
 }
 argu = con_args(buffer, " \n");
