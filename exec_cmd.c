@@ -5,7 +5,8 @@ void exec_cmd(char **filepath){
        int status;
        id = fork();
        if(id == 0){
-        execve(filepath[0], filepath, NULL);
+        if(execve(filepath[0], filepath, NULL) == -1)
+                     perror("ERROR");
        }else{
               wait(&status);
        }
