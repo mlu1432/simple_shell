@@ -27,7 +27,7 @@ position++;
 
 token = strtok(line, delim);
 
-for (i = 0; token != NULL || token != '\n'; i++)
+for (i = 0; token != NULL; i++)
 {
 tokens[i] = malloc(sizeof(char) * strlen(token));
 strcpy(tokens[i], token);
