@@ -19,11 +19,10 @@ input = 0;
 while (-1)
 {
 if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
-printline("shell: ");
+        printline("shell: ");
 input = getline(&buffer, &buff_count, stdin);
 if (input == EOF || input == -1)
 {
-printline("\n");
 return (-1);
 }
 else
@@ -48,6 +47,5 @@ exec_cmd(argu);
 free(path);
 free_pointer(argu);
 free(buffer);
-
 return (0);
 }
