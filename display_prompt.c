@@ -29,6 +29,6 @@ else
 launch(buffer);
 }
 }
-free(buffer);
+
 return (0);
 }

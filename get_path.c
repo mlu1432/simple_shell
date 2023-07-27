@@ -28,9 +28,14 @@ real_path = malloc(sizeof(char *) * length);
 real_path = strdup(each_path[i]);
 strcat(real_path, "/");
 strcat(real_path, filename);
-if (file_exist(real_path))
-return (real_path);
+if (file_exist(real_path)){
+ return (real_path);
+}else{
+
+    free(real_path);
 }
-free(real_path);
+
+}
+
 return (filename);
 }
