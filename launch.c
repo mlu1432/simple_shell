@@ -36,7 +36,6 @@ else
 {
 perror("error");
 }
-free_pointer(argu);
 }
 return (0);
 }
