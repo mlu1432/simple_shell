@@ -31,13 +31,12 @@ else
 path = get_path(argu[0]);
 argu[0] = strdup(path);
 if (file_exist(argu[0]))
-
 exec_cmd(argu);
 else
 {
 perror("error");
 }
-
+free_pointer(argu);
 }
 return (0);
 }
