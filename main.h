@@ -17,7 +17,7 @@ void printline(char *string);
 int display_prompt(void);
 int file_exist(char *string);
 char *get_path(char *filename);
-void exec_cmd(char **filepath);
+void exec_cmd(char **filepath, char **environ);
 char **con_args(char *string, char *delim);
 void free_pointer(char **arr);
 int launch(char *buffer);

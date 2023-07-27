@@ -6,7 +6,7 @@
  * @filepath: the file path
  * Return: returns 1 if it fails
 */
-void exec_cmd(char **filepath)
+void exec_cmd(char **filepath, char **environ)
 {
 int id;
 int status;
