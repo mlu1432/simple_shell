@@ -8,10 +8,9 @@
 int display_prompt(void)
 {
 size_t buff_count;
-char *path;
+char *path, *buffer, **argu;
 int input;
-char *buffer;
-char **argu;
+
 buff_count = 0;
 buffer = NULL;
 input = 0;
@@ -19,7 +18,7 @@ while (-1)
 {
 if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
 printline("shell: ");
-input = getline(&buffer, &buff_count, stdin);
+getline(&buffer, &buff_count, stdin);
 if (input == EOF || input == -1)
 {
 return (-1);
