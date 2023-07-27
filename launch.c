@@ -8,6 +8,17 @@ int launch(char *buffer)
 {
 char **argu;
 char *path;
+int i;
+i = 0;
+while (buffer[i] != '\0')
+{
+    if(buffer[i] == '\n')
+    {
+        buffer[i] = '\0';
+    }
+    i++;
+}
+
 argu = con_args(buffer, " \n");
 if (argu[0] == NULL)
 return (0);
