@@ -10,7 +10,7 @@ int main(void)
 	char *buffer = NULL, *args[20];
 	int counter = 1, verify = 0, file_exists = 0, exit_stat = 0, is_builtin_result = 0;
 
-	_print("$: ", 3);
+	_printer("$: ", 3);
 	read = getline(&buffer, &buffer_size, stdin);
 	while (read != -1)
 	{
@@ -41,7 +41,7 @@ int main(void)
 		else if (*buffer == '\n')
 			free(buffer);
 		buffer = NULL, counter++;
-		_print("$ ", 2), read = getline(&buffer, &buffer_size, stdin);
+		_printer("$ ", 2), read = getline(&buffer, &buffer_size, stdin);
 	}
 	freed(buffer);
 	return (exit_stat);

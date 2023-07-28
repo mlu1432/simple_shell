@@ -13,7 +13,7 @@
 
 extern char **environ;
 
-int _print(const char *prompt, unsigned int size);
+int _printer(const char *prompt, unsigned int size);
 int con_args(char *entry, char **arguments);
 int _strcmp(char *str1, char *str2);
 int verify_path(char **arguments);

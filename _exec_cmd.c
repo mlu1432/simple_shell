@@ -13,7 +13,7 @@ int exec_cmd(char **arguments)
 
 	pid = fork();
 	if (pid == -1)
-		_print("failed\n", 7);
+		_printer("failed\n", 7);
 	else if (pid == 0)
 	{
 		exe_status = execve(arguments[0], arguments, environ);
