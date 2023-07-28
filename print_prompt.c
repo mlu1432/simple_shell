@@ -5,7 +5,7 @@
  * @size: Length ot the prompt
  * Return: 0 if success or -1 if fails
  */
-int _printp(const char *prompt, unsigned int size)
+int _print(const char *prompt, unsigned int size)
 {
 	int written;
 

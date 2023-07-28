@@ -6,12 +6,12 @@
  * Return: Length of the array
  */
 
-int fill_args(char *entry, char **arguments)
+int con_args(char *entry, char **arguments)
 {
 	int i = 0;
 	char *options, *aux = entry, *command;
 
-	command = strtok(entry, "\n\t\r "); 
+	command = strtok(entry, "\n\t\r ");
 	arguments[i] = command;
 	while (aux != NULL)
 	{

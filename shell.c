@@ -5,44 +5,44 @@
  */
 int main(void)
 {
-	ssize_t bytes_rd = 0;
-	size_t bf_size = 0;
-	char *entry = NULL, *arguments[20];
-	int counter = 1, vf_stat = 0, exist_stat = 0, exit_stat = 0, blt_stat = 0;
+	ssize_t read = 0;
+	size_t buffer_size = 0;
+	char *buffer = NULL, *args[20];
+	int counter = 1, verify = 0, file_exists = 0, exit_stat = 0, is_builtin_result = 0;
 
-	_printp("$ ", 2);
-	bytes_rd = getline(&entry, &bf_size, stdin);
-	while (bytes_rd != -1)
+	_print("$: ", 3);
+	read = getline(&buffer, &buffer_size, stdin);
+	while (read != -1)
 	{
-		if (*entry != '\n')
+		if (*buffer != '\n')
 		{
-			fill_args(entry, arguments);
-			if (arguments[0] != NULL)
+			con_args(buffer, args);
+			if (args[0] != NULL)
 			{
-				exist_stat = exist(arguments[0]);
-				if (exist_stat != 0)
+				file_exists = exist(args[0]);
+				if (file_exists != 0)
 				{
-					vf_stat = verify_path(arguments);
-					if (vf_stat == 0)
-						exit_stat = exec(arguments), free(entry), free(*arguments);
+					verify = verify_path(args);
+					if (verify == 0)
+						exit_stat = exec(args), free(buffer), free(*args);
 					else
 					{
-					blt_stat = verify_blt(arguments, exit_stat);
-					if (blt_stat != 0)
-						exit_stat = print_not_found(arguments, counter), free(entry);
+					is_builtin_result = verify_blt(args, exit_stat);
+					if (is_builtin_result != 0)
+						exit_stat = print_not_found(args, counter), free(buffer);
 					}
 				}
-				else 
-					exit_stat = exec(arguments), free(entry);
+				else
+					exit_stat = exec(args), free(buffer);
 			}
 			else
-				free(entry);
+				free(buffer);
 		}
-		else if (*entry == '\n')
-			free(entry);
-		entry = NULL, counter++;
-		_printp("$ ", 2), bytes_rd = getline(&entry, &bf_size, stdin);
+		else if (*buffer == '\n')
+			free(buffer);
+		buffer = NULL, counter++;
+		_print("$ ", 2), read = getline(&buffer, &buffer_size, stdin);
 	}
-	last_free(entry);
+	last_free(buffer);
 	return (exit_stat);
 }
