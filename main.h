@@ -27,8 +27,8 @@ int print_not_found(char **arguments, int counter);
 char *_getenv(char *global_var);
 
 int _putchar(char c);
-int exist(char *pathname);
-void free_grid(char **grid, int heigth);
+int file_exist(char *pathname);
+void free_all(char **grid, int heigth);
 void last_free(char *entry);
 int verify_blt(char **arguments, int exit_stat);
 

@@ -25,13 +25,13 @@ int verify_path(char **arguments)
 	{
 		command_path = find_path(dir_path, arguments[0]);
 		test_cph[i] = command_path;
-		exist_stat = exist(test_cph[i]);
+		exist_stat = file_exist(test_cph[i]);
 		dir_path = strtok(NULL, ":");
 		i++;
 	}
 	i--;
 	free(global_dup);
-	free_grid(test_cph, i);
+	free_all(test_cph, i);
 	if (exist_stat == 0)
 	{
 		arguments[0] = test_cph[i];

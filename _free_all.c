@@ -5,18 +5,18 @@
  *@heigth: Heigth of the grid
  */
 
-void free_grid(char **grid, int heigth)
+void free_all(char **buffer, int arg_count)
 {
 	int i = 0;
 
-	if (grid == NULL)
+	if (buffer == NULL)
 	{
 		return;
 	}
 
-	while (i < heigth)
+	while (i < arg_count)
 	{
-		free(grid[i]);
+		free(buffer[i]);
 		i++;
 	}
 }

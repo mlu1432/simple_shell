@@ -19,7 +19,7 @@ int main(void)
 			con_args(buffer, args);
 			if (args[0] != NULL)
 			{
-				file_exists = exist(args[0]);
+				file_exists = file_exist(args[0]);
 				if (file_exists != 0)
 				{
 					verify = verify_path(args);
