@@ -8,27 +8,27 @@ char *_getenv(char *global_var)
 {
 	int i = 0;
 	const char cutter[] = "=";
-	char *env_tok, *envdup, *env_tok_dup;
+	char *env_token, *envcopy, *env_tok_dup;
 
 	if (global_var != NULL)
 	{
 		if (environ == NULL)
 			return (NULL);
-		envdup = _strdup(environ[i]);
-		while (envdup != NULL)
+		envcopy = _strdup(environ[i]);
+		while (envcopy != NULL)
 		{
-			env_tok = strtok(envdup, cutter);
-			if (_strcmp(env_tok, global_var) == 0)
+			env_token = strtok(envcopy, cutter);
+			if (_strcmp(env_token, global_var) == 0)
 			{
-				env_tok = strtok(NULL, cutter);
-				/**printf("%s\n", token);*/
-				env_tok_dup = _strdup(env_tok);
-				free(envdup);
+				env_token = strtok(NULL, cutter);
+
+				env_tok_dup = _strdup(env_token);
+				free(envcopy);
 				return (env_tok_dup);
 			}
 			i++;
-			free(envdup);
-			envdup = _strdup(environ[i]);
+			free(envcopy);
+			envcopy = _strdup(environ[i]);
 		}
 	}
 	return (NULL);
