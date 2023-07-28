@@ -1,22 +1,22 @@
 #include "main.h"
 /**
- *free_grid - Free the allocated memory used in the last excercise
- *@grid: pointer to grid
- *@heigth: Heigth of the grid
- */
+ *free_all - Free the allocated memory used in the last excercise
+*@buffer: pointer to arrat
+*@arg_count: number of args
+*/
 
 void free_all(char **buffer, int arg_count)
 {
-	int i = 0;
+int i = 0;
 
-	if (buffer == NULL)
-	{
-		return;
-	}
+if (buffer == NULL)
+{
+return;
+}
 
-	while (i < arg_count)
-	{
-		free(buffer[i]);
-		i++;
-	}
+while (i < arg_count)
+{
+free(buffer[i]);
+i++;
+}
 }

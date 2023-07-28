@@ -1,35 +1,35 @@
 #include "main.h"
 /**
- * _getenv - Get the content of a global variable
- * @global_var: Variable to extract from environ
- * Return: Pointer to the content of a variable, or NULL if fails
+ * _getenv - buffer content of a string
+ * @buffer: buffer to recieve the environment variable
+ * Return: the variable
  */
-char *_getenv(char *global_var)
+char *_getenv(char *buffer)
 {
-	int i = 0;
-	const char cutter[] = "=";
-	char *env_token, *envcopy, *env_tok_dup;
+int i = 0;
+const char cutter[] = "=";
+char *env_token, *envcopy, *env_token_dup;
 
-	if (global_var != NULL)
-	{
-		if (environ == NULL)
-			return (NULL);
-		envcopy = _strdup(environ[i]);
-		while (envcopy != NULL)
-		{
-			env_token = strtok(envcopy, cutter);
-			if (_strcmp(env_token, global_var) == 0)
-			{
-				env_token = strtok(NULL, cutter);
+if (buffer != NULL)
+{
+if (environ == NULL)
+return (NULL);
+envcopy = _strdup(environ[i]);
+while (envcopy != NULL)
+{
+env_token = strtok(envcopy, cutter);
+if (_strcmp(env_token, buffer) == 0)
+{
+env_token = strtok(NULL, cutter);
 
-				env_tok_dup = _strdup(env_token);
-				free(envcopy);
-				return (env_tok_dup);
-			}
-			i++;
-			free(envcopy);
-			envcopy = _strdup(environ[i]);
-		}
-	}
-	return (NULL);
+env_token_dup = _strdup(env_token);
+free(envcopy);
+return (env_token_dup);
+}
+i++;
+free(envcopy);
+envcopy = _strdup(environ[i]);
+}
+}
+return (NULL);
 }

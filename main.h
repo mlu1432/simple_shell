@@ -13,18 +13,18 @@
 
 extern char **environ;
 
-int _printer(const char *prompt, unsigned int size);
-int con_args(char *entry, char **arguments);
-int _strcmp(char *str1, char *str2);
-int check_path(char **arguments);
-char *_strdup(char *str);
-char *find_path(char *dir_path, char *command);
-int exec_cmd(char **arguments);
+int _printer(const char *buff, unsigned int size);
+int con_args(char *string, char **args);
+int _strcmp(char *string1, char *string2);
+int check_path(char **argu);
+char *_strdup(char *string);
+char *find_path(char *path, char *command);
+int exec_cmd(char **args);
 
-int print_numbers(int n);
+int print_numbers(int num);
 int _strlen(const char *string);
 int not_found(char **arguments, int counter);
-char *_getenv(char *global_var);
+char *_getenv(char *buffer);
 
 int _putchar(char c);
 int file_exist(char *pathname);
