@@ -6,7 +6,7 @@
  */
 int verify_path(char **arguments)
 {
-	char *global_path = NULL; 
+	char *global_path = NULL;
 	char *global_dup = NULL;
 	char *dir_path = NULL;
 	char *command_path = NULL;
@@ -23,7 +23,7 @@ int verify_path(char **arguments)
 	free(global_path);
 	while (exist_stat == -1 && dir_path != NULL)
 	{
-		command_path = append_command(dir_path, arguments[0]);
+		command_path = find_path(dir_path, arguments[0]);
 		test_cph[i] = command_path;
 		exist_stat = exist(test_cph[i]);
 		dir_path = strtok(NULL, ":");

@@ -18,7 +18,7 @@ int con_args(char *entry, char **arguments);
 int _strcmp(char *str1, char *str2);
 int verify_path(char **arguments);
 char *_strdup(char *str);
-char *append_command(char *dir_path, char *command);
+char *find_path(char *dir_path, char *command);
 int exec(char **arguments);
 
 int print_numbers(int n);
