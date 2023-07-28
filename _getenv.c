@@ -7,7 +7,7 @@
 char *_getenv(char *buffer)
 {
 int i = 0;
-const char cutter[] = "=";
+char *delim = "=";
 char *env_token, *envcopy, *env_token_dup;
 
 if (buffer != NULL)
@@ -17,10 +17,10 @@ return (NULL);
 envcopy = _strdup(environ[i]);
 while (envcopy != NULL)
 {
-env_token = strtok(envcopy, cutter);
+env_token = _strtok(envcopy, delim);
 if (_strcmp(env_token, buffer) == 0)
 {
-env_token = strtok(NULL, cutter);
+env_token = _strtok(NULL, delim);
 
 env_token_dup = _strdup(env_token);
 free(envcopy);

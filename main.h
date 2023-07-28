@@ -25,7 +25,7 @@ int print_numbers(int num);
 int _strlen(const char *string);
 int not_found(char **arguments, int counter);
 char *_getenv(char *buffer);
-
+char *_strtok(char *str, char *delim);
 int _putchar(char c);
 int file_exist(char *pathname);
 void free_all(char **grid, int heigth);
