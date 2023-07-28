@@ -29,7 +29,7 @@ int main(void)
 					{
 					is_builtin_result = verify_blt(args, exit_stat);
 					if (is_builtin_result != 0)
-						exit_stat = print_not_found(args, counter), free(buffer);
+						exit_stat = not_found(args, counter), free(buffer);
 					}
 				}
 				else
@@ -43,6 +43,6 @@ int main(void)
 		buffer = NULL, counter++;
 		_print("$ ", 2), read = getline(&buffer, &buffer_size, stdin);
 	}
-	last_free(buffer);
+	freed(buffer);
 	return (exit_stat);
 }

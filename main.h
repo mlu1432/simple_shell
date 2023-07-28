@@ -23,13 +23,13 @@ int exec_cmd(char **arguments);
 
 int print_numbers(int n);
 int _strlen(const char *string);
-int print_not_found(char **arguments, int counter);
+int not_found(char **arguments, int counter);
 char *_getenv(char *global_var);
 
 int _putchar(char c);
 int file_exist(char *pathname);
 void free_all(char **grid, int heigth);
-void last_free(char *entry);
+void freed(char *entry);
 int verify_blt(char **arguments, int exit_stat);
 
 #endif

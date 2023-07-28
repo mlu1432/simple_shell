@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- * last_free - Free the memory for the last execution
+ * _freed - Free the memory for the last execution
  * @entry: Input typed by the user
  */
-void last_free(char *entry)
+void freed(char *buffer)
 {
 	if (isatty(STDIN_FILENO))
 	{
 		_putchar('\n');
-		free(entry);
+		free(buffer);
 	}
 	if (!isatty(STDIN_FILENO))
-		free(entry);
+		free(buffer);
 }
