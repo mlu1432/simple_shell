@@ -27,7 +27,7 @@ int main(void)
 						exit_stat = exec_cmd(args), free(buffer), free(*args);
 					else
 					{
-					is_builtin_result = verify_blt(args, exit_stat);
+					is_builtin_result = check_blt(args, exit_stat);
 					if (is_builtin_result != 0)
 						exit_stat = not_found(args, counter), free(buffer);
 					}

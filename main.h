@@ -30,6 +30,6 @@ int _putchar(char c);
 int file_exist(char *pathname);
 void free_all(char **grid, int heigth);
 void freed(char *entry);
-int verify_blt(char **arguments, int exit_stat);
+int check_blt(char **arguments, int exit_stat);
 
 #endif
