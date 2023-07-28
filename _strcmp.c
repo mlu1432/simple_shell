@@ -7,15 +7,15 @@
  */
 int _strcmp(char *string1, char *string2)
 {
-	int a;
+	int i;
 
-	for (a = 0; string1[a] != '\0'; a++)
+	for (i = 0; string1[i] != '\0'; i++)
 		;
-	for (a = 0; string2[a] != '\0'; a++)
+	for (i = 0; string2[i] != '\0'; i++)
 	{
-		if (string1[a] != string2[a])
+		if (string1[i] != string2[i])
 		{
-			return (string1[a] - string2[a]);
+			return (string1[i] - string2[i]);
 		}
 	}
 	return (0);

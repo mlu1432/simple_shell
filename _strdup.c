@@ -4,22 +4,22 @@
  * @str: String to be duplicated
  * Return: Pointer to the duplicated string
  */
-char *_strdup(char *str)
+char *_strdup(char *string)
 {
 	unsigned int i, len;
-	char *duplicate;
+	char *str_dup;
 
-	if (str == NULL)
+	if (string == NULL)
 		return (NULL);
 
-	for (len = 0; str[len] != '\0'; len++)
+	for (len = 0; string[len] != '\0'; len++)
 		;
-	duplicate = (char *) malloc(sizeof(char) * (len + 1));
-	if (duplicate == NULL)
+	str_dup = (char *) malloc(sizeof(char) * (len + 1));
+	if (str_dup == NULL)
 		return (NULL);
 	for (i = 0; i <= len; i++)
 	{
-		duplicate[i] = str[i];
+		str_dup[i] = string[i];
 	}
-	return (duplicate);
+	return (str_dup);
 }

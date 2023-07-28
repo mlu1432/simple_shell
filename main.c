@@ -22,7 +22,7 @@ int main(void)
 				file_exists = file_exist(args[0]);
 				if (file_exists != 0)
 				{
-					verify = verify_path(args);
+					verify = check_path(args);
 					if (verify == 0)
 						exit_stat = exec_cmd(args), free(buffer), free(*args);
 					else
