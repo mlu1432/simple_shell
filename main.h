@@ -19,7 +19,7 @@ int _strcmp(char *str1, char *str2);
 int verify_path(char **arguments);
 char *_strdup(char *str);
 char *find_path(char *dir_path, char *command);
-int exec(char **arguments);
+int exec_cmd(char **arguments);
 
 int print_numbers(int n);
 int _strlen(const char *string);

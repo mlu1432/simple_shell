@@ -24,7 +24,7 @@ int main(void)
 				{
 					verify = verify_path(args);
 					if (verify == 0)
-						exit_stat = exec(args), free(buffer), free(*args);
+						exit_stat = exec_cmd(args), free(buffer), free(*args);
 					else
 					{
 					is_builtin_result = verify_blt(args, exit_stat);
@@ -33,7 +33,7 @@ int main(void)
 					}
 				}
 				else
-					exit_stat = exec(args), free(buffer);
+					exit_stat = exec_cmd(args), free(buffer);
 			}
 			else
 				free(buffer);
