@@ -1,17 +1,17 @@
 #include "main.h"
 /**
- * fill_args - Fill an array with every input typed by the user
- * @entry: String with the input
+ * con_args - converts a line to an array.
+ * @string: String with the input
  * @arguments: Array to be filled
  * Return: Length of the array
  */
 
-int con_args(char *entry, char **arguments)
+int con_args(char *string, char **arguments)
 {
 	int i = 0;
-	char *options, *aux = entry, *command;
+	char *options, *aux = string, *command;
 
-	command = strtok(entry, "\n\t\r ");
+	command = strtok(string, "\n\t\r ");
 	arguments[i] = command;
 	while (aux != NULL)
 	{
