@@ -17,8 +17,10 @@ if (str != NULL)
 s = str;
 
 
-for (; *s != '\0'; s++) {
-for (i = 0; delim[i] != '\0'; i++) {
+for (; *s != '\0'; s++)
+{
+for (i = 0; delim[i] != '\0'; i++)
+{
 if (*s == delim[i])
 break;
 }
@@ -32,9 +34,12 @@ if (*token == '\0')
 return (NULL);
 
 
-for (; *s != '\0'; s++) {
-for (i = 0; delim[i] != '\0'; i++) {
-if (*s == delim[i]) {
+for (; *s != '\0'; s++)
+{
+for (i = 0; delim[i] != '\0'; i++)
+{
+if (*s == delim[i])
+{
 *s = '\0';
 s++;
 return (token);
